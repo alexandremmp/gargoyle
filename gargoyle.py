@@ -23,14 +23,6 @@ def saveAs():
 	except:
 		showerror(title="Sorry!", message="Unable to save file, please try again...")
 
-def exportPDF():
-	f = asksaveasfile(mode='w', defaultextension='.pdf')
-	t = text.get(0.0, END)
-	try:
-		f.write(t.rstrip())
-	except:
-		showerror(title="Sorry!", message="Unable to save file, please try again...")
-
 def openFile():
 	f = askopenfile(mode='r')
 	t = f.read()
@@ -55,8 +47,6 @@ filemenu.add_separator()
 filemenu.add_command(label="Save", command=saveFile)
 filemenu.add_command(label="Save as...", command=saveAs)
 filemenu.add_separator()
-filemenu.add_command(label="Export as PDF", command=exportPDF)
-filemenu.add_separator()
 filemenu.add_command(label="Quit", command=root.quit)
 
 filemenu = Menu(menubar)
@@ -65,11 +55,3 @@ filemenu.add_command(label="Gargoyle Help", command=help)
 
 root.config(menu=menubar)
 root.mainloop()
-
-
-
-
-
-
-
-
