@@ -1,6 +1,7 @@
 from Tkinter import *
 from tkFileDialog import *
 import tkMessageBox
+import sys
 
 filename = None
 
@@ -33,10 +34,11 @@ def openFile():
 
 root = Tk()
 root.title("Gargoyle")
-root.minsize(width=600, height=600)
-root.maxsize(width=900, height=600)
+width = root.winfo_screenwidth()
+height = root.winfo_screenheight()
+root.geometry(("%dx%d") % (width, height))
 
-text = Text(root, width=800, height=600, font=('Ubuntu', 16), bg='#282C34', fg='#ffffff', highlightthickness=0)
+text = Text(root, width=root.winfo_screenwidth(), height=root.winfo_screenheight(), font=('Ubuntu', 16), bg='#282C34', fg='#ABB2BF', highlightthickness=0, undo=True)
 text.pack()
 
 menubar = Menu(root)
