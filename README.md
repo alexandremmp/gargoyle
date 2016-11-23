@@ -1,2 +1,2 @@
 # gargoyle
-A very simple text editor made in python
+A very simple text editor made in Python
